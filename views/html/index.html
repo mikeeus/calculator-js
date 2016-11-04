@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=UTF-8>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calc.js</title>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/javascripts/calculator.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">  
+  <!--font-->
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+</head>
+<body>
+  <div class="title text-center">
+    <h1 class="text-center">Simple JavaScript Calculator</h1>
+    <p class="designed-by">Designed and Built by <a href="http://www.mikias.net">Mikias Abera</a> </p>
+  </div>
+  <div class="container-fluid">
+
+      <div class="calculator container-fluid">
+        <!--Display-->
+        <div class="row">
+          <div class="display">
+            <div class="output">
+              <span id="current">0</span>
+            </div>
+            <div class="output2">
+              <span id="calculation"></span>
+            </div>
+            <div class="streak1"></div>
+            <div class="streak2"></div>
+            <div class="streak3"></div>
+          </div>
+        </div>
+        <!--numpad buttons-->
+        <div class="numpad">
+          <!--Top row -->
+          <div class="row">
+            <div class="col-xs-3">
+              <div class="np-buttons ce" onclick="handleClick(this)">CE</div>
+            </div>
+            <div class="col-xs-3">
+              <div class="np-buttons" onclick="handleClick(this)">&divide;</div>
+            </div>
+            <div class="col-xs-3">
+              <div class="np-buttons" onclick="handleClick(this)">&times;</div>
+            </div>
+            <div class="col-xs-3">
+              <div class="np-buttons" onclick="handleClick(this)">-</div>
+            </div>
+          </div>
+          <!--2nd row-->
+          <div class="row">
+            <div class="col-xs-3">
+              <div class="np-buttons" onclick="handleClick(this)">1</div>
+            </div>
+            <div class="col-xs-3">
+              <div class="np-buttons" onclick="handleClick(this)">2</div>
+            </div>
+            <div class="col-xs-3">
+              <div class="np-buttons" onclick="handleClick(this)">3</div>
+            </div>
+            <div class="col-xs-3">
+              <div class="np-buttons" onclick="handleClick(this)">+</div>
+            </div>
+          </div>
+          <!--3rd and 4th rows-->
+          <div class="row">
+            <div class="col-xs-9">
+              <!--4th row-->
+              <div class="row">
+                <div class="col-xs-4">
+                  <div class="np-buttons" onclick="handleClick(this)">4</div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="np-buttons" onclick="handleClick(this)">5</div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="np-buttons" onclick="handleClick(this)">6</div>
+                </div>
+              </div>
+              <!--5th row-->
+              <div class="row">
+                <div class="col-xs-4">
+                  <div class="np-buttons" onclick="handleClick(this)">7</div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="np-buttons" onclick="handleClick(this)">8</div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="np-buttons" onclick="handleClick(this)">9</div>
+                </div>
+              </div>
+            </div>
+            <!--Equals-->
+            <div class="col-xs-3">
+              <div class="np-buttons equals-button" onclick="handleClick(this)">=</div>
+            </div>
+            <!--Final row-->
+            <div class="col-xs-3">
+              <div class="np-buttons" onclick="handleClick(this)">0</div>
+            </div>
+            <div class="col-xs-3">
+              <div class="np-buttons" onclick="handleClick(this)">.</div>
+            </div>
+            <div class="col-xs-6">
+              <div class="np-buttons" onclick="handleClick(this)">00</div>
+            </div>
+          </div>
+        </div>
+ 
+      </div>
+  </div>
+
+</body>
+</html>
