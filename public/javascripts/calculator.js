@@ -1,6 +1,7 @@
 // state
 var calculation = "";
 var current = "";
+var totaled = false;
 
 // functions
 function handleClick(element){
@@ -19,6 +20,13 @@ function handleClick(element){
     case "7":
     case "8":
     case "9":
+      if(totaled == true){
+        calculation = "";
+        calculation = content;
+        current = content;
+        totaled = false;
+        break;
+      }
       if(current.length > 14){ current = current.slice(0,15); break;}    
       if(current == "0" || ["×", "÷", "+", "-"].includes(current)){
         calculation = calculation.concat(content);        
@@ -30,6 +38,12 @@ function handleClick(element){
       break;
     case "0":
     case "00":
+      if(totaled == true){
+        calculation = "";
+        current = content;
+        totaled = false;
+        break;
+      }
       if(current.length > 14){ current = current.slice(0,15); break;}        
       if(current == "0" || current == "00"){
         console.log('not adding to zero');
@@ -39,6 +53,13 @@ function handleClick(element){
       current = current.concat(content);
       break;
     case ".":
+      if(totaled == true){
+        calculation = "";
+        calculation = "0" + content;        
+        current = "0" + content;
+        totaled = false;
+        break;
+      }
       if(current.length > 14){ current = current.slice(0,15); break;}    
       if(!current.split("").includes(".")){
         current = current.concat(content);
@@ -52,6 +73,9 @@ function handleClick(element){
     case "÷":
     case "+":
     case "-":
+      if(totaled == true){
+        totaled = false;
+      }
       if(calculation == "" && current == 0){
         console.log("empty");
         break;
@@ -71,10 +95,11 @@ function handleClick(element){
         current = "Invalid Operation"
         break;
       }
-      // if(calculation > 9999999999999999){
-      //   current = "Error: too large";
-      //   break;
-      // }
+      if(calculation > 9999999999999999){
+        current = "Error: too large";
+        break;
+      }
+      totaled = true;
       calculation = calculation.toString().slice(0,16);
       current = calculation;
       break;
