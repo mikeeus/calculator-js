@@ -95,7 +95,7 @@ function handleClick(element){
         current = "Invalid Operation"
         break;
       }
-      if(calculation > 9999999999999999){
+      if(calculation > 999999999999999 || calculation.length > 15){
         current = "Error: too large";
         break;
       }
